@@ -12,7 +12,16 @@ tree = html.fromstring(page.content)
 
 
 #get the universties name and Address from tress
-uNames 	 = tree.xpath('/html/body/div[2]/div[2]/div/div[2]/div/table[1]/tbody/tr/td/h2/text()')
+uNames 	 = tree.xpath('//*[@id="maincontentcontainer"]//h2/text()')
+uBody 	 = tree.xpath('//*[@id="maincontentcontainer"]//p/text()')
+ulink 	 = tree.xpath('//*[@id="maincontentcontainer"]//h5/a/@href')
+acronym  = tree.xpath('//*[@id="maincontentcontainer"]//h5/acronym/text()')
+# founded  = tree.xpath('//*[@id="maincontentcontainer"]//h5/text()')
+address  = tree.xpath('//*[@id="maincontentcontainer"]//td[2]/h5[1]/text()')
+
+
+
+
 # uHref 	 = tree.xpath('//td[@class="i"]/a/@href')
 # uAddress = tree.xpath('//td[@class="i"]/h5/text()')
 # uNames = tree.xpath('//div[@class="span_2_of_2"]')
@@ -20,6 +29,10 @@ uNames 	 = tree.xpath('/html/body/div[2]/div[2]/div/div[2]/div/table[1]/tbody/tr
 # col span_2_of_2
 
 print uNames
+# print uBody
+# print ulink
+print acronym
+print address[3]
 
 
 print ('processing data...')
